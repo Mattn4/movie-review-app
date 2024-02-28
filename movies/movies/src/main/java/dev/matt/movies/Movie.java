@@ -1,8 +1,6 @@
 package dev.matt.movies;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -10,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.DocumentReference;
 
 import java.util.List;
 
-@Document("collection = movies") // represents each movie in the collection
+@Document(collection = "movies") // represents each movie in the collection
 @Data // Add getter, setter & toString method to each private property
 @AllArgsConstructor
 @NoArgsConstructor
@@ -30,7 +28,7 @@ public class Movie {
 
     private List<String> genres;
 
-    private List<String> backDrops;
+    private List<String> backdrops;
 
     @DocumentReference
     // Database will only store the Id of the reviews. The reviews will be in a separate collection
