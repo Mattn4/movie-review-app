@@ -19,8 +19,8 @@ public class MovieService {
     }
 
     // Optional means it may return null, possible because no such movie id exists
-    public Optional<Movie> singleMovie(ObjectId id) {
-        return movieRepository.findById(id);
+    public Optional<Movie> singleMovie(String imdbId) {
+        return movieRepository.findMovieByImdbId(imdbId);
     }
 
 }
